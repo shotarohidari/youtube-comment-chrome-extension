@@ -1,0 +1,21 @@
+{
+  "name": "youtube comment observer",
+  "description": "observe youtube comment",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "permissions": ["activeTab", "scripting","debugger"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  "action": {},
+  "devtools_page": "devtools.html"
+}

@@ -9,18 +9,27 @@
     "lint": "pnpm @biomejs/biome lint --write ./src",
     "check": "pnpm @biomejs/biome check --write ./src",
     "setup:web": "pnpm tsx scripts/setupForWeb.mts",
-    "postinstall":"lefthook install"
+    "postinstall": "lefthook install",
+    "build": "rollup --config rollup.config.mjs",
+    "build-watch": "rollup --watch --config rollup.config.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "1.8.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/chrome": "^0.0.268",
     "lefthook": "^1.6.15",
+    "tslib": "^2.6.3",
     "tsx": "^4.14.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0",
     "zx": "^8.1.2"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
 }
