@@ -7,7 +7,15 @@
     "service_worker": "dist/background.js",
     "type": "module"
   },
-  "permissions": ["activeTab", "scripting","debugger"],
+  "permissions": ["activeTab", "scripting", "debugger", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/contentScript.js"],
+      "runat":"document_end"
+    }
+  ],
   "commands": {
     "_execute_action": {
       "suggested_key": {
